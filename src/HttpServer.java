@@ -49,8 +49,12 @@ public class HttpServer {
                 //创建响应对象
                 Response response = new Response(output);
                 response.setRequest(request);
+
+                
                 response.sendStaticResource();
 
+                socket.close();
+                shutdown = request.getUri().equals(SHUTDOWN_COMMAND);
             }catch(Exception e){
                 e.printStackTrace();
                 continue;
