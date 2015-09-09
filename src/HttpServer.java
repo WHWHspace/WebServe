@@ -12,8 +12,6 @@ import java.net.UnknownHostException;
  */
 public class HttpServer {
 
-    //设置webroot,资源和servlet目录
-    public static final String WEB_ROOT = System.getProperty("user.dir") + File.separator + "webroot";
     private static final String SHUTDOWN_COMMAND = "/SHUTDOWN";
 
     private boolean shutdown = false;
@@ -50,7 +48,14 @@ public class HttpServer {
                 Response response = new Response(output);
                 response.setRequest(request);
 
-                
+                if (request.getUri().startsWith("/servlet")){
+                    ServletProcessor processor = new ServletProcessor();
+                    processor.process(request,response);
+                }
+                else{
+                    StaticResourceProcessor processor = new StaticResourceProcessor();
+                    processor.process(request,response);
+                }
                 response.sendStaticResource();
 
                 socket.close();
