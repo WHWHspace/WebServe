@@ -56,7 +56,6 @@ public class HttpServer {
                     StaticResourceProcessor processor = new StaticResourceProcessor();
                     processor.process(request,response);
                 }
-                response.sendStaticResource();
 
                 socket.close();
                 shutdown = request.getUri().equals(SHUTDOWN_COMMAND);
