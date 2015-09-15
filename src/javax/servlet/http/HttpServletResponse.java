@@ -472,8 +472,8 @@ public interface HttpServletResponse extends ServletResponse {
 
     /**
      * Status code (405) indicating that the method specified in the
-     * <code><em>Request-Line</em></code> is not allowed for the resource
-     * identified by the <code><em>Request-URI</em></code>.
+     * <code><em>connector.Request-Line</em></code> is not allowed for the resource
+     * identified by the <code><em>connector.Request-URI</em></code>.
      */
 
     public static final int SC_METHOD_NOT_ALLOWED = 405;
@@ -542,7 +542,7 @@ public interface HttpServletResponse extends ServletResponse {
 
     /**
      * Status code (414) indicating that the server is refusing to service
-     * the request because the <code><em>Request-URI</em></code> is longer
+     * the request because the <code><em>connector.Request-URI</em></code> is longer
      * than the server is willing to interpret.
      */
 

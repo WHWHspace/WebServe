@@ -1,3 +1,8 @@
+package core;
+
+import connector.Request;
+import connector.Response;
+
 import java.io.IOException;
 
 /**

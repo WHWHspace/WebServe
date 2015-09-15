@@ -180,7 +180,7 @@ public interface ServletRequest {
 
     /**
      * Returns the value of a request parameter as a <code>String</code>,
-     * or <code>null</code> if the parameter does not exist. Request parameters
+     * or <code>null</code> if the parameter does not exist. connector.Request parameters
      * are extra information sent with the request.  For HTTP servlets,
      * parameters are contained in the query string or posted form data.
      *
@@ -254,7 +254,7 @@ public interface ServletRequest {
     public String[] getParameterValues(String name);
  
     /** Returns a java.util.Map of the parameters of this request.
-     * Request parameters
+     * connector.Request parameters
      * are extra information sent with the request.  For HTTP servlets,
      * parameters are contained in the query string or posted form data.
      *

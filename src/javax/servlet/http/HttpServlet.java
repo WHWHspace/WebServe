@@ -155,7 +155,7 @@ public abstract class HttpServlet extends GenericServlet
      * safe nor idempotent. 
      *
      * <p>If the request is incorrectly formatted, <code>doGet</code>
-     * returns an HTTP "Bad Request" message.
+     * returns an HTTP "Bad connector.Request" message.
      * 
      *
      * @param req	an {@link HttpServletRequest} object that
@@ -246,7 +246,7 @@ public abstract class HttpServlet extends GenericServlet
      * called multiple times for one HTTP HEAD request).
      *
      * <p>If the HTTP HEAD request is incorrectly formatted,
-     * <code>doHead</code> returns an HTTP "Bad Request"
+     * <code>doHead</code> returns an HTTP "Bad connector.Request"
      * message.
      *
      *
@@ -312,7 +312,7 @@ public abstract class HttpServlet extends GenericServlet
      * updating stored data or buying items online.
      *
      * <p>If the HTTP POST request is incorrectly formatted,
-     * <code>doPost</code> returns an HTTP "Bad Request" message.
+     * <code>doPost</code> returns an HTTP "Bad connector.Request" message.
      *
      *
      * @param req	an {@link HttpServletRequest} object that
@@ -377,7 +377,7 @@ public abstract class HttpServlet extends GenericServlet
      * affected URL in temporary storage.
      *
      * <p>If the HTTP PUT request is incorrectly formatted,
-     * <code>doPut</code> returns an HTTP "Bad Request" message.
+     * <code>doPut</code> returns an HTTP "Bad connector.Request" message.
      *
      *
      * @param req	the {@link HttpServletRequest} object that
@@ -428,7 +428,7 @@ public abstract class HttpServlet extends GenericServlet
      * affected URL in temporary storage.
      *
      * <p>If the HTTP DELETE request is incorrectly formatted,
-     * <code>doDelete</code> returns an HTTP "Bad Request"
+     * <code>doDelete</code> returns an HTTP "Bad connector.Request"
      * message.
      *
      *
@@ -810,7 +810,7 @@ public abstract class HttpServlet extends GenericServlet
  * A response that includes no body, for use in (dumb) "HEAD" support.
  * This just swallows that body, counting the bytes in order to set
  * the content length appropriately.  All other methods delegate directly
- * to the HTTP Servlet Response object used to construct this one.
+ * to the HTTP Servlet connector.Response object used to construct this one.
  */
 // file private
 class NoBodyResponse implements HttpServletResponse {

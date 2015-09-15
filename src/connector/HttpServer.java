@@ -1,11 +1,14 @@
-import java.io.File;
+package connector;
+
+import core.ServletProcessor;
+import core.StaticResourceProcessor;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 /**
  * Created by YBH on 2015/9/8.
@@ -16,12 +19,7 @@ public class HttpServer {
 
     private boolean shutdown = false;
 
-    public static void main(String[] args){
-        HttpServer server = new HttpServer();
-        server.await();
-    }
-
-    private void await() {
+    public void await() {
         ServerSocket serverSocket = null;
         int port = 8080;
         try{

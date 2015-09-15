@@ -1,3 +1,5 @@
+package connector;
+
 import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;
 import java.io.*;

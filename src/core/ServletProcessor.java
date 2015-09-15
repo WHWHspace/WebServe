@@ -1,3 +1,7 @@
+package core;
+
+import connector.*;
+
 import javax.servlet.Servlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
