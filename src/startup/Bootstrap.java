@@ -1,6 +1,6 @@
 package startup;
 
-import connector.HttpServer;
+import connector.HttpConnector;
 
 /**
  * Created by YBH on 2015/9/16.
@@ -8,7 +8,7 @@ import connector.HttpServer;
 public class Bootstrap {
 
     public static void main(String[] args){
-        HttpServer server = new HttpServer();
-        server.await();
+        HttpConnector connector = new HttpConnector();
+        connector.start();
     }
 }
