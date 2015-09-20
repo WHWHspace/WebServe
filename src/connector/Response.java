@@ -22,11 +22,16 @@ public class Response implements ServletResponse{
         this.request = request;
     }
 
+    /**
+     * 发送静态资源文件
+     * @throws IOException
+     */
     public void sendStaticResource() throws IOException{
         byte[] bytes = new byte[BUFFER_SIZE];
         FileInputStream fis = null;
 
         try {
+            //从webroot读取文件
             File file = new File(Constants.WEB_ROOT, request.getUri());
             fis = new FileInputStream(file);
             int ch = fis.read(bytes,0,BUFFER_SIZE);

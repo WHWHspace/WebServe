@@ -6,6 +6,9 @@ import java.util.Locale;
 import javax.servlet.ServletResponse;
 import javax.servlet.ServletOutputStream;
 
+/**
+ * 使用外观模式，防止直接向servlet传入response时servlet调用response的sendStaticResource()方法
+ */
 public class ResponseFacade implements ServletResponse {
 
     private ServletResponse response;

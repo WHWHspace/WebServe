@@ -17,6 +17,7 @@ public class HttpProcessor {
     public HttpProcessor(HttpConnector socket) {
     }
 
+    //处理http请求
     public void process(Socket socket) {
         InputStream input = null;
         OutputStream output = null;
@@ -33,6 +34,7 @@ public class HttpProcessor {
             Response response = new Response(output);
             response.setRequest(request);
 
+            //判断是否是servlet请求
             if (request.getUri().startsWith("/servlet")){
                 ServletProcessor processor = new ServletProcessor();
                 processor.process(request,response);

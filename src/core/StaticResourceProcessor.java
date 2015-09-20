@@ -6,7 +6,7 @@ import connector.Response;
 import java.io.IOException;
 
 /**
- * Created by YBH on 2015/9/10.
+ * 静态资源请求处理器
  */
 public class StaticResourceProcessor {
 

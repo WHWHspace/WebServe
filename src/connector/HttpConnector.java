@@ -19,6 +19,7 @@ public class HttpConnector implements Runnable{
 
     @Override
     public void run() {
+        //新建serverSocket,监听本机8080端口的请求
         ServerSocket serverSocket = null;
         int port = 8080;
         try{
@@ -27,6 +28,7 @@ public class HttpConnector implements Runnable{
             System.exit(1);
         }
 
+        //循环，建立连接并处理请求
         while(!stopped){
             Socket socket = null;
 
@@ -36,12 +38,17 @@ public class HttpConnector implements Runnable{
                 continue;
             }
 
+            //新建HttpProcessor,处理请求
             HttpProcessor processor = new HttpProcessor(this);
             processor.process(socket);
         }
     }
 
+    /**
+     * 新建并开始connector线程
+     */
     public void start(){
+        //将自己作为参数，新建线程
         Thread thread = new Thread(this);
         thread.start();
     }

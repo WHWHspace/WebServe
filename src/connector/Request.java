@@ -23,6 +23,7 @@ public class Request implements ServletRequest {
         this.input = input;
     }
 
+    //解析http请求
     public void parse() {
         StringBuffer request = new StringBuffer(2048);
         int i;
@@ -41,6 +42,12 @@ public class Request implements ServletRequest {
         this.uri = parseUri(request.toString());
     }
 
+    /**
+     * 解析请求的资源
+     * 根据http请求的格式，请求的资源为第一个空格和第二个空格之间的字符串
+     * @param requestString
+     * @return
+     */
     private String parseUri(String requestString){
         int index1,index2;
         index1 = requestString.indexOf(' ');

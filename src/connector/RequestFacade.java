@@ -10,6 +10,9 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletInputStream;
 import javax.servlet.ServletRequest;
 
+/**
+ * 使用外观模式，防止直接向servlet传入request时servlet调用request的paeseUri()和parse()方法
+ */
 public class RequestFacade implements ServletRequest {
 
     private ServletRequest request = null;
